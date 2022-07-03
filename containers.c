@@ -88,6 +88,9 @@ int main() {
   printf("Value of cEle : %c\n", g.cEle);     // 's'
   printf("Value of cEle : %d\n", g.cEle);     // 115, (ASCII)
 
+  // a structure or union cannot contain a member that has a variable length array type
+  // it cannot also contain a member that is a pointer to a variable length array type
+  
   ///////////////////////////////////////////////////////////////
   /// Pointers
   ///////////////////////////////////////////////////////////////

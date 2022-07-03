@@ -73,6 +73,8 @@ int main() {
   int sum = sumArray(arr, 5);                   // the const pointer pointing to the first element is passed
   printf("Sum : %d\n", sum);
 
+  // During function call, array and function names are converted to corresponding pointers.
+
   ////////////////////////////////////////////////////////////////
   /// Recursion
   ////////////////////////////////////////////////////////////////
