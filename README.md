@@ -54,7 +54,7 @@ The source files are commented well. This should help any new learner of C and a
 
 | Source                        | Topics          |
 | :---                          | :---            |
-| [container.c](container.c)    | C Containers: Arrays, Structures, Unions, Pointers |
+| [containers.c](containers.c)  | C Containers: Arrays, Structures, Unions, Pointers |
 | [methods.c](methods.c)        | Functions: Declaration, Definition, By Value, By Pointer, Recursion, Function Pointers |
 | [io.c](io.c)                  | Standard I/O, File I/O, Read and Write Strings |
 
