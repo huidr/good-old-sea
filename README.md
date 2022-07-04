@@ -60,6 +60,7 @@ The source files are commented well. This should help any new learner of C and a
 | [methods.c](methods.c)        | Functions: declaration, definition, by value, by pointer, recursion, variable arguments, function pointers |
 | [io.c](io.c)                  | Standard I/O, file I/O, read and write strings |
 | [preprocessor.c](preprocessor.c) | Preprocessor directives: unconditional and conditional, parametrized macros, standard macros |
+| [library.c](library.c)        | `time.h`, `unistd.h` |
 
 ### Future
 

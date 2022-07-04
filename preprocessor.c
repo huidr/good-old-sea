@@ -5,13 +5,16 @@
 
 // pre-processor is just a text substitution tool which happens before compilation
 
+///////////////////////////////////////////////////////////////////////////
+/// Unconditional directives
+///////////////////////////////////////////////////////////////////////////
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>                                             // provides va_list, etc
 
-///////////////////////////////////////////////////////////////////////////
-/// Unconditional directives
-///////////////////////////////////////////////////////////////////////////
+#include "header.h"                                          // to include the file header.h resided in the same directory as this source file
+// .h files are just C source files meant to be used as header files and so they don't have main functions
 
 // macros are simply substituted by pre-processor before compile time. for example, the pre-processor will replace PI with 3.14
 
@@ -24,22 +27,49 @@
 #undef AGE
 #define AGE 36
 
+#line 20 "macros"                                               // the next line will be label line number 20 and the name of the program will be "macros" during compilation (the file name is optinal)
+// for example, this is now line number 20
+#line 33 "preprocessor.c"                                       // restoring the correct line numbering and file name
+
 /////////////////////////////////////////////////////////////////////////
 /// Conditional directives
 /////////////////////////////////////////////////////////////////////////
+
+#ifndef AGE
+#error AGE not defined                                          
+#endif
+// the above code aborts the compilation process if AGE is not defined; the error message "AGE not defined" is optional
 
 // A header file may be included more than one time directly or indirectly, this leads to problems of redeclaration of same variables/functions. To avoid this problem, directives like defined, ifdef and ifndef are used. 
 
 // define a macro if it's not defined already
 #ifndef PI
 #define PI 3.14
-#endif
+#endif                                                          // end if directives with #endif
 
 // do something if a macro is defined already
 #ifdef DEBUG
 /* things to do when DEBUG is defined  */ 
 #endif
 // this is useful if we pass the -DDEBUG flag on gcc as this will define DEBUG, so we can turn debugging on and off on the fly
+
+#ifdef HEAD                                                     // HEAD is defined to be 1 in the header file header.h
+#undef HEAD
+#endif                                                          // do not forget this
+
+#define HEAD 8                                                  // HEAD is now 8 but only in this source code
+
+// if, elif, else
+#if HEAD > 5
+  #undef HEAD                                                   // the indentation is not necessary and it's done only for readability
+  #define HEAD 10
+#elif HEAD < 2
+  #undef HEAD
+  #define HEAD 0
+#else
+  #undef HEAD
+  #define HEAD 12
+#endif
 
 //////////////////////////////////////////////////////////////////////
 /// Parametrized macros
@@ -129,6 +159,9 @@ int main() {
 
   // using MAX(x, y)
   printf("max(5, 8) = %d\n", MAX(5, 8));
+
+  // using a macro from a user-defined header file
+  printf("%d\n", HEAD);
 
   /////////////////////////////////////////////////////////////////////////
   /// Standard macros
