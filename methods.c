@@ -2,10 +2,35 @@
                Call and return by value,
                Call and return by pointer,
                Recursion,
+               Variable arguments,
                Function pointers */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>                                           // provides va_list, va_start, va_end, etc.
+
+#define PI 3.14
+#define CIRC 1
+#define RECT 2
+
+////////////////////////////////////////////////////////////////
+/// Variable arguments
+////////////////////////////////////////////////////////////////
+
+double area(int type, ...) {                                  // ellipses (...) denote variable number of arguments
+  va_list argl;                                               // va_list is a type to hold information about the arguments
+  va_start(argl, type);                                       // the argument fetched by va_arg() would be the next argument following type
+  if (type == CIRC) {
+    double radius = va_arg(argl, double);                     // get the argument
+    va_end(argl);                                             // should be called before return statement whenever va_start() is used
+    return PI * radius * radius;
+  } else {
+    double length = va_arg(argl, double);                     // get argument
+    double width  = va_arg(argl, double);                     // get next argument
+    va_end(argl);
+    return length * width;
+  }
+}
 
 int main() {
 
@@ -88,6 +113,16 @@ int main() {
 
   // two or more functions can be co-recursive, that is, f() calling g() and g() calling f(). at least one of the functions must have an exit condition
 
+  ///////////////////////////////////////////////////////////////
+  /// Variable arguments
+  ///////////////////////////////////////////////////////////////
+
+  // circle
+  printf("Area of a circle with radius 4 is %.2f\n", area(CIRC, 4.00));      // the argument should be entered in double format, that is, write 4 as 4.0 or 4.00, etc. (this is important)
+
+  // rectangle
+  printf("Area of a rectangle with length 3.2 and width 2.4 is %.2f\n", area(RECT, 3.2, 2.4));
+  
   ///////////////////////////////////////////////////////////////
   /// Function pointers
   ///////////////////////////////////////////////////////////////

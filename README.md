@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="images/logo.png" width="50%" />
+  <img src="images/logo.png" width="40%" />
 </p>
 
-<h1 align="center">
+<h2 align="center">
   Good Old Sea
-</h1>
+</h2>
 
 <p align="center">
   <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />
@@ -12,9 +12,9 @@
   <img src="https://img.shields.io/badge/Emacs-%237F5AB6.svg?&style=for-the-badge&logo=gnu-emacs&logoColor=white" />
 </p>
   
-After so many years and decades, the world is still powered by the C programming language. Here are some source codes written entirely in C.
+After so many years and decades, the world is still powered by the C programming language. Here are some source codes written entirely in C (the ANSI standard).
 
-All the source files have been tested to compile and execute. All of them are written on Emacs. They are compiled and executed on bash. See the list of all source files below in `contents` section.
+All the source files have been tested to compile and execute. All of them are written on Emacs. They are compiled and executed on bash. See the list of all source files below in `contents` section. A reference card is [here](reference/CRefCard.v2.2.pdf).
 
 ### Compilation
 
@@ -54,11 +54,12 @@ The source files are commented well. This should help any new learner of C and a
 
 | Source                        | Topics          |
 | :---                          | :---            |
-| [preludes.c](preludes.c)      | Conversions, Operators, `typedef` |
-| [flow.c](flow.c)              | Statements, `if else`, `switch`, Loops, Jumps |
-| [containers.c](containers.c)  | C Containers: Arrays, Structures, Unions, Pointers |
-| [methods.c](methods.c)        | Functions: Declaration, Definition, By Value, By Pointer, Recursion, Function Pointers |
-| [io.c](io.c)                  | Standard I/O, File I/O, Read and Write Strings |
+| [preludes.c](preludes.c)      | Conversions, operators, `typedef` |
+| [flow.c](flow.c)              | Statements, `if else`, `switch`, loops, jumps |
+| [containers.c](containers.c)  | C containers: arrays, structures, unions, pointers |
+| [methods.c](methods.c)        | Functions: declaration, definition, by value, by pointer, recursion, variable arguments, function pointers |
+| [io.c](io.c)                  | Standard I/O, file I/O, read and write strings |
+| [preprocessor.c](preprocessor.c) | Preprocessor directives: unconditional and conditional, parametrized macros, standard macros |
 
 ### Future
 
