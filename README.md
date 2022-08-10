@@ -2,6 +2,8 @@
   <img class="logo" src="images/logo.png" height="150vh"/>
 </p>
 
+checking something
+
 <h2 align="center">
   Good Old Sea
 </h2>
